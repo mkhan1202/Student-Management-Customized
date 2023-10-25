@@ -1,0 +1,16 @@
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\Student Management Core.exe.config
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\Student Management Core.exe
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\Student Management Core.pdb
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\EntityFramework.dll
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\Guna.UI.dll
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\bin\x64\Debug\EntityFramework.xml
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.Add_Student_Info.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.Edit_Student_Info.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.MainForm.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.Properties.Resources.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.Search_Student.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.Student_Profile.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student_Management_Core.View_Student_Info.resources
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student Management Core.csproj.GenerateResource.Cache
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student Management Core.exe
+E:\C- Drive Visual Studio\Projects\Student Management Core\Student Management Core\obj\x64\Debug\Student Management Core.pdb

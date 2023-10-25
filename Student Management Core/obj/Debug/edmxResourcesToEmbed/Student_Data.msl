@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Core_StudyModelStoreContainer" CdmEntityContainer="Core_StudyEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Core_StudyModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Core_StudyModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Core_StudyModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Core_StudyModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Core_StudyModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Core_StudyModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Core_StudyModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Core_StudyModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Core_StudyModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Class_Info">
+      <EntityTypeMapping TypeName="Core_StudyModel.Class_Info">
+        <MappingFragment StoreEntitySet="Class_Info">
+          <ScalarProperty Name="Class_Name" ColumnName="Class_Name" />
+          <ScalarProperty Name="Class_Id" ColumnName="Class_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender_Info">
+      <EntityTypeMapping TypeName="Core_StudyModel.Gender_Info">
+        <MappingFragment StoreEntitySet="Gender_Info">
+          <ScalarProperty Name="Gender_Type" ColumnName="Gender Type" />
+          <ScalarProperty Name="Gender_Id" ColumnName="Gender Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Information">
+      <EntityTypeMapping TypeName="Core_StudyModel.Student_Information">
+        <MappingFragment StoreEntitySet="Student_Information">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Admission_Date" ColumnName="Admission Date" />
+          <ScalarProperty Name="Subject_Id" ColumnName="Subject_Id" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Mother_s_Contact" ColumnName="Mother's Contact" />
+          <ScalarProperty Name="Father_s_Contact" ColumnName="Father's Contact" />
+          <ScalarProperty Name="Personal_Contact" ColumnName="Personal Contact" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
+          <ScalarProperty Name="Birth_Date" ColumnName="Birth Date" />
+          <ScalarProperty Name="Mother_s_Name" ColumnName="Mother's Name" />
+          <ScalarProperty Name="Father_s_Name" ColumnName="Father's Name" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Student_Id" ColumnName="Student Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subject_Info">
+      <EntityTypeMapping TypeName="Core_StudyModel.Subject_Info">
+        <MappingFragment StoreEntitySet="Subject_Info">
+          <ScalarProperty Name="Subject_Name" ColumnName="Subject_Name" />
+          <ScalarProperty Name="Subject_Id" ColumnName="Subject_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Core_StudyModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

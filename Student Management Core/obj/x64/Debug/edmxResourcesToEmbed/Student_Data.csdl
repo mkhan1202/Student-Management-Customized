@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Core_StudyModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Core_StudyEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Class_Info" EntityType="Core_StudyModel.Class_Info" />
+    <EntitySet Name="Gender_Info" EntityType="Core_StudyModel.Gender_Info" />
+    <EntitySet Name="Student_Information" EntityType="Core_StudyModel.Student_Information" />
+    <EntitySet Name="Subject_Info" EntityType="Core_StudyModel.Subject_Info" />
+    <EntitySet Name="sysdiagrams" EntityType="Core_StudyModel.sysdiagram" />
+    <AssociationSet Name="FK_Student_Information_Class_Info" Association="Core_StudyModel.FK_Student_Information_Class_Info">
+      <End Role="Class_Info" EntitySet="Class_Info" />
+      <End Role="Student_Information" EntitySet="Student_Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Information_Gender_Info" Association="Core_StudyModel.FK_Student_Information_Gender_Info">
+      <End Role="Gender_Info" EntitySet="Gender_Info" />
+      <End Role="Student_Information" EntitySet="Student_Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Information_Subject_Info" Association="Core_StudyModel.FK_Student_Information_Subject_Info">
+      <End Role="Subject_Info" EntitySet="Subject_Info" />
+      <End Role="Student_Information" EntitySet="Student_Information" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Core_StudyModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Core_StudyModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="Class_Info">
+    <Key>
+      <PropertyRef Name="Class_Id" />
+    </Key>
+    <Property Name="Class_Id" Type="Int32" Nullable="false" />
+    <Property Name="Class_Name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Student_Information" Relationship="Core_StudyModel.FK_Student_Information_Class_Info" FromRole="Class_Info" ToRole="Student_Information" />
+  </EntityType>
+  <EntityType Name="Gender_Info">
+    <Key>
+      <PropertyRef Name="Gender_Id" />
+    </Key>
+    <Property Name="Gender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Gender_Type" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Student_Information" Relationship="Core_StudyModel.FK_Student_Information_Gender_Info" FromRole="Gender_Info" ToRole="Student_Information" />
+  </EntityType>
+  <EntityType Name="Student_Information">
+    <Key>
+      <PropertyRef Name="Student_Id" />
+    </Key>
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Father_s_Name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Mother_s_Name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Personal_Contact" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Father_s_Contact" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Mother_s_Contact" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+    <Property Name="Class" Type="Int32" Nullable="false" />
+    <Property Name="Roll" Type="Int32" Nullable="false" />
+    <Property Name="Institution" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="Section" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Subject_Id" Type="Int32" />
+    <Property Name="Admission_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Image" Type="Binary" Nullable="false" MaxLength="250" FixedLength="false" />
+    <NavigationProperty Name="Class_Info" Relationship="Core_StudyModel.FK_Student_Information_Class_Info" FromRole="Student_Information" ToRole="Class_Info" />
+    <NavigationProperty Name="Gender_Info" Relationship="Core_StudyModel.FK_Student_Information_Gender_Info" FromRole="Student_Information" ToRole="Gender_Info" />
+    <NavigationProperty Name="Subject_Info" Relationship="Core_StudyModel.FK_Student_Information_Subject_Info" FromRole="Student_Information" ToRole="Subject_Info" />
+  </EntityType>
+  <EntityType Name="Subject_Info">
+    <Key>
+      <PropertyRef Name="Subject_Id" />
+    </Key>
+    <Property Name="Subject_Id" Type="Int32" Nullable="false" />
+    <Property Name="Subject_Name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Student_Information" Relationship="Core_StudyModel.FK_Student_Information_Subject_Info" FromRole="Subject_Info" ToRole="Student_Information" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Student_Information_Class_Info">
+    <End Role="Class_Info" Type="Core_StudyModel.Class_Info" Multiplicity="1" />
+    <End Role="Student_Information" Type="Core_StudyModel.Student_Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class_Info">
+        <PropertyRef Name="Class_Id" />
+      </Principal>
+      <Dependent Role="Student_Information">
+        <PropertyRef Name="Class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Information_Gender_Info">
+    <End Role="Gender_Info" Type="Core_StudyModel.Gender_Info" Multiplicity="1" />
+    <End Role="Student_Information" Type="Core_StudyModel.Student_Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender_Info">
+        <PropertyRef Name="Gender_Id" />
+      </Principal>
+      <Dependent Role="Student_Information">
+        <PropertyRef Name="Gender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Information_Subject_Info">
+    <End Role="Subject_Info" Type="Core_StudyModel.Subject_Info" Multiplicity="0..1" />
+    <End Role="Student_Information" Type="Core_StudyModel.Student_Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject_Info">
+        <PropertyRef Name="Subject_Id" />
+      </Principal>
+      <Dependent Role="Student_Information">
+        <PropertyRef Name="Subject_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

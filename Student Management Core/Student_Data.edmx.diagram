@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a441b5f9c1b476b887f6cb5f0a83b05" Name="Diagram1">
+        <EntityTypeShape EntityType="Core_StudyModel.Class_Info" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="Core_StudyModel.Gender_Info" Width="1.5" PointX="3.375" PointY="12" />
+        <EntityTypeShape EntityType="Core_StudyModel.Student_Information" Width="1.5" PointX="8.1566193216278311" PointY="9.4878547235801136" />
+        <EntityTypeShape EntityType="Core_StudyModel.Subject_Info" Width="1.5" PointX="2.75" PointY="15.625" />
+        <EntityTypeShape EntityType="Core_StudyModel.sysdiagram" Width="1.5" PointX="6.125" PointY="12.5" />
+        <AssociationConnector Association="Core_StudyModel.FK_Student_Information_Class_Info" ></AssociationConnector>
+        <AssociationConnector Association="Core_StudyModel.FK_Student_Information_Gender_Info" />
+        <AssociationConnector Association="Core_StudyModel.FK_Student_Information_Subject_Info" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
